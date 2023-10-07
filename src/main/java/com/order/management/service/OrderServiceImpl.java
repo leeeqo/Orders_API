@@ -4,13 +4,15 @@
  */
 package com.order.management.service;
 
-import com.order.management.entity.Order;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import com.order.management.entity.Order;
 import com.order.management.dao.OrderRepository;
 import com.order.management.dao.OrderLineRepository;
 import com.order.management.entity.Product;
 import com.order.management.entity.OrderLine;
 import com.order.management.entity.Customer;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

@@ -23,7 +23,7 @@ public class Customer {
     private int id;
     
     @Column(name = "registration_code")
-    private int registrationCode;
+    private String registrationCode;
     
     @Column(name = "full_name")
     private String fullName;
@@ -41,7 +41,7 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(int registrationCode, String fullName, String email, String telephone) {
+    public Customer(String registrationCode, String fullName, String email, String telephone) {
         this.registrationCode = registrationCode;
         this.fullName = fullName;
         this.email = email;
@@ -69,7 +69,7 @@ public class Customer {
         return id;
     }
 
-    public int getRegistrationCode() {
+    public String getRegistrationCode() {
         return registrationCode;
     }
 
@@ -89,7 +89,7 @@ public class Customer {
         this.id = id;
     }
 
-    public void setRegistrationCode(int registrationCode) {
+    public void setRegistrationCode(String registrationCode) {
         this.registrationCode = registrationCode;
     }
 

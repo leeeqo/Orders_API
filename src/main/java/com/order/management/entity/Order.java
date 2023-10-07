@@ -5,11 +5,9 @@
 package com.order.management.entity;
 
 import jakarta.persistence.*;
-import com.order.management.entity.OrderLine;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -57,6 +55,7 @@ public class Order {
             orderLines = new ArrayList<>();
         
         orderLines.add(orderLine);
+        numOrderLines++;
     }
 
     public int getId() {

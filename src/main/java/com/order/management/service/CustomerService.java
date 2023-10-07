@@ -4,8 +4,6 @@
  */
 package com.order.management.service;
 
-import com.order.management.entity.Product;
-import com.order.management.entity.Order;
 import com.order.management.entity.Customer;
 import java.util.List;
 

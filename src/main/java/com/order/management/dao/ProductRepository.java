@@ -11,6 +11,4 @@ import com.order.management.entity.Product;
  *
  * @author Admin
  */
-public interface ProductRepository extends JpaRepository<Product, Integer> {
-    
-}
+public interface ProductRepository extends JpaRepository<Product, Integer> {}

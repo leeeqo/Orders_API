@@ -11,6 +11,5 @@ import com.order.management.entity.Customer;
  *
  * @author Admin
  */
-public interface CustomerRepository extends JpaRepository<Customer, Integer> {
-    
-}
+
+public interface CustomerRepository extends JpaRepository<Customer, Integer> {}

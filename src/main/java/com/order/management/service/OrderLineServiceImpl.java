@@ -51,6 +51,8 @@ public class OrderLineServiceImpl implements OrderLineService {
         Product product = orderLine.getProduct();
         Order order = orderLine.getOrder();
         
+        // This check is necessary if we are not sure that client uses DISTINCT product_id for ONE order
+        
         for (OrderLine ol : orderLineRepository.findAllByOrder(order)) {
             if (ol.getProduct().equals(product)) {
                 ol.setNumProducts(ol.getNumProducts() + orderLine.getNumProducts());
