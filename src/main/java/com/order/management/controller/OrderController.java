@@ -94,7 +94,7 @@ public class OrderController {
     
     @GetMapping("/date/{date}")
     public List<Order> getOrdersByDate(@PathVariable String date) {
-            //@DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date) {
+            // @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date) {
         return orderService.findAllBySubmissionDate(Date.valueOf(date));
     }
     
