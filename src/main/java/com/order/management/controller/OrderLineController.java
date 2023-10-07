@@ -4,28 +4,33 @@
  */
 package com.order.management.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.order.management.service.ProductService;
-import com.order.management.service.OrderService;
-import com.order.management.service.CustomerService;
-import com.order.management.service.OrderLineService;
-import com.order.management.entity.Order;
-import com.order.management.entity.Product;
-import com.order.management.entity.Customer;
-import com.order.management.entity.OrderLine;
-import java.util.List;
+//import com.order.management.service.ProductService;
+//import com.order.management.service.OrderService;
+//import com.order.management.service.CustomerService;
+//import com.order.management.service.OrderLineService;
+//import com.order.management.entity.Order;
+//import com.order.management.entity.Product;
+//import com.order.management.entity.Customer;
+//import com.order.management.entity.OrderLine;
+//import java.util.List;
 
 /**
  *
  * @author Admin
  */
 
+
+// All the orderlines in ver 2 are created from OrderController.
+// I suppose it's more convenient because client doesn't want to know anything about orderlines,
+// just create an ORDER with specific PRODUCTS. 
+
 @RestController
 @RequestMapping("/orderlines")
 public class OrderLineController {
     
-    @Autowired
+    /*@Autowired
     private OrderLineService orderLineService;
     
     @Autowired
@@ -42,6 +47,12 @@ public class OrderLineController {
     @GetMapping("/{id}")
     public OrderLine showAllOrderLines(@PathVariable int id) {
         return orderLineService.getOrderLine(id);
+    }
+    
+    @GetMapping("/order/{id}")
+    public List<OrderLine> showAllOrderLinesByOrder(@PathVariable int order_id) {
+        Order order = orderService.getOrder(order_id);
+        return orderLineService.getOrderLinesByOrder(order);
     }
     
     @PostMapping("/{order_id}/{product_id}")
@@ -68,5 +79,5 @@ public class OrderLineController {
     @DeleteMapping("/{id}")
     public void deleteOrderLine(@PathVariable int id) {
         orderLineService.deleteOrderLine(id);
-    }
+    }*/
 }

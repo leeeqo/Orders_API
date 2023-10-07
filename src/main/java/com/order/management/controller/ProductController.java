@@ -6,14 +6,10 @@ package com.order.management.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 import com.order.management.service.ProductService;
-import com.order.management.service.OrderService;
-import com.order.management.service.CustomerService;
-import com.order.management.service.OrderLineService;
-import com.order.management.entity.Order;
 import com.order.management.entity.Product;
-import com.order.management.entity.Customer;
-import com.order.management.entity.OrderLine;
+
 import java.util.List;
 
 /**
@@ -43,6 +39,15 @@ public class ProductController {
         productService.saveProduct(product);
         
         return product;
+    }
+    
+    @PostMapping("/all")
+    public Product[] addNewProducts(@RequestBody Product[] products) {
+        for (Product product : products) {
+            productService.saveProduct(product);
+        }
+        
+        return products;
     }
     
     /*@PutMapping()
