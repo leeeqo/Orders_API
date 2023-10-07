@@ -6,7 +6,6 @@ package com.order.management.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import com.order.management.service.ProductService;
 import com.order.management.service.OrderService;
@@ -94,9 +93,9 @@ public class OrderController {
     }
     
     @GetMapping("/date/{date}")
-    public List<Order> getOrdersByDate(@PathVariable// String date) {
-            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date) {
-        return orderService.findAllBySubmissionDate(date);//Date.valueOf(date));
+    public List<Order> getOrdersByDate(@PathVariable String date) {
+            //@DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date) {
+        return orderService.findAllBySubmissionDate(Date.valueOf(date));
     }
     
     /*@PostMapping("/{customer_id}")
