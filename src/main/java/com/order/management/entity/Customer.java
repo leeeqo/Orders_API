@@ -1,17 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.order.management.entity;
 
 import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Admin
- */
+
 
 @Entity
 @Table(name = "customers")
@@ -38,8 +31,7 @@ public class Customer {
             , mappedBy = "customer")
     private List<Order> orders;
     
-    public Customer() {
-    }
+    public Customer() {}
 
     public Customer(String registrationCode, String fullName, String email, String telephone) {
         this.registrationCode = registrationCode;

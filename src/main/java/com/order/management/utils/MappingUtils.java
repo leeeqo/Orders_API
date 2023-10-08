@@ -1,13 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.order.management.utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import com.order.management.dao.OrderLineRepository;
-import com.order.management.dao.CustomerRepository;
-import com.order.management.dao.ProductRepository;
+import com.order.management.repository.OrderLineRepository;
+import com.order.management.repository.CustomerRepository;
+import com.order.management.repository.ProductRepository;
 import com.order.management.entity.Order;
 import com.order.management.dto.OrderSummary;
 import com.order.management.dto.OrderCreation;
@@ -19,10 +15,7 @@ import java.util.List;
 import java.util.ArrayList;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author Admin
- */
+
 
 @Service
 public class MappingUtils {

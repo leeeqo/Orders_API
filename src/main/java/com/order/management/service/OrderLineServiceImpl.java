@@ -1,11 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.order.management.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import com.order.management.dao.OrderLineRepository;
+import com.order.management.repository.OrderLineRepository;
 import com.order.management.entity.OrderLine;
 import com.order.management.entity.Product;
 import com.order.management.entity.Order;
@@ -14,10 +10,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author Admin
- */
+
 
 @Service
 public class OrderLineServiceImpl implements OrderLineService {

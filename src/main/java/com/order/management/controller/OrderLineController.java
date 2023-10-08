@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.order.management.controller;
 
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -16,15 +12,12 @@ import org.springframework.web.bind.annotation.*;
 //import com.order.management.entity.OrderLine;
 //import java.util.List;
 
-/**
- *
- * @author Admin
- */
 
 
-// All the orderlines in ver 2 are created from OrderController.
+// All the orderlines are created using OrderController.
 // I suppose it's more convenient because client doesn't want to know anything about orderlines,
 // just create an ORDER with specific PRODUCTS. 
+
 
 @RestController
 @RequestMapping("/orderlines")

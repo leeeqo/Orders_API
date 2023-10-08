@@ -1,17 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.order.management.entity;
 
 import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Admin
- */
+
 
 @Entity
 @Table(name = "products")
@@ -37,7 +30,15 @@ public class Product {
             , mappedBy = "product")
     private List<OrderLine> orderLines;
     
+    
     public Product() {}
+
+    public Product(String name, String skuCode, int unitPrice) {
+        this.name = name;
+        this.skuCode = skuCode;
+        this.unitPrice = unitPrice;
+    }
+    
     
     public void addOrderLineToProduct(OrderLine orderLine) {
         if (orderLines == null)
