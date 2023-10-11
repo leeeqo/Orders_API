@@ -70,25 +70,29 @@ public class OrderController {
     }
     
     @GetMapping("/product/{product_id}")
-    public List<Order> getOrdersByProduct(@PathVariable int product_id) {
+    public List<OrderSummary> getOrdersByProduct(@PathVariable int product_id) {
         Product product = productService.getProduct(product_id);
         List<Order> orders = orderService.findAllByProduct(product);
         
-        return orders;
+        return orders.stream().map(mappingUtils::orderToSummary)
+                .collect(Collectors.toList());
     }
     
     @GetMapping("/customer/{customer_id}")
-    public List<Order> getOrdersByCustomer(@PathVariable int customer_id) {
+    public List<OrderSummary> getOrdersByCustomer(@PathVariable int customer_id) {
         Customer customer = customerService.getCustomer(customer_id);
         List<Order> orders = orderService.findAllByCustomer(customer);
         
-        return orders;
+        return orders.stream().map(mappingUtils::orderToSummary)
+                .collect(Collectors.toList());
     }
     
     @GetMapping("/date/{date}")
-    public List<Order> getOrdersByDate(@PathVariable String date) {
+    public List<OrderSummary> getOrdersByDate(@PathVariable String date) {
             // @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date) {
-        return orderService.findAllBySubmissionDate(Date.valueOf(date));
+        List<Order> orders = orderService.findAllBySubmissionDate(Date.valueOf(date));
+        return orders.stream().map(mappingUtils::orderToSummary)
+                .collect(Collectors.toList());
     }
     
     /*@PostMapping("/{customer_id}")
